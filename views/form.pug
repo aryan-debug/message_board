@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  include header.pug
+
+  div(class = "container mt-5")
+    form(action = "/new", method = "POST")
+        div(class = "form-group")
+            label(for = "title") Title
+            input(class = "form-control" id = "title" name = "title"  aria-describedby="title" required autocomplete = "off")
+        div(class = "form-group")
+            label(for = "message") Message
+            textarea(class = "form-control" id = "message" name = "message" rows="3" aria-describedby = "message" required autocomplete = "off") 
+        div(class = "form-group")
+            label(for = "user") Name
+            input(class = "form-control" id = "user" name = "user"  aria-describedby="username" required autocomplete = "off")
+        button(class = "btn btn-dark btn-lg") Submit

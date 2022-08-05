@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  include header.pug
+  div(class = "container")
+    div(class = "row")
+      each message in messages
+          div(class = "col-4")
+            div(class = "card bg-dark text-white mt-5" style="width: 18rem;")
+              div(class = "card-header")
+                h5 #{message.title}
+              div(class = "card-body" )
+                p(class = "card-text") #{message.message}
+              div(class = "card-footer")
+                small(class = "text-muted") #{message.user} - #{message.added}
+
